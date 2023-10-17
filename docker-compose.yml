@@ -1,0 +1,20 @@
+version: "3.9"
+# version
+# Tipp speichern nicht vergesssen 
+
+# Erklärung im Text
+volumes: 
+  dbdaten: # Lokale Datenbanken
+  code:    # PHP und HTML Code
+
+#services sind die docker container, also "Server"
+services:
+    # 2. Server einrichten Webserver
+  phpapache:
+    build: Webserver # Ordner anlegen und dockerfile als Datei
+    restart: always
+    container_name: Php_login_forms
+    volumes:
+      - ./code:/var/www/html/
+    ports:
+      - 80:80 
